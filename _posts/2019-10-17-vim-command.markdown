@@ -1,1 +1,22 @@
-## vim command
+### plugin management
+
+#### vim 8 has its own plugin management function, so you do not need vundle any more.
+ * plugin path : ~/.vim/pack/foobar/{opt,start} 
+    1. path [foobar] can be any name;
+    2. opt:  the plugin in opt path will load when manually(ex. run command : packadd xxxx);
+    3. start: the plugin in start path will load automaticly.
+ example: 
+ ```shell
+ curl -L https://github.com/kien/ctrlp.vim/archive/1.79.tar.gz \
+	| tar zx -C ~/.vim/pack/foobar/opt
+ ```
+ add tags in vim commandline
+ ```shell
+ :helptags ~/.vim/pack/foobar/opt/ctrlp.vim-1.79/doc
+ ```
+ when you want to use this ctrlp, run command in vim:
+ ```shell
+ :packadd ctrlp.vim-1.79
+ ```
+ 
+

@@ -1,1 +1,24 @@
-<h2 id="vim-command">vim command</h2>
+<h3 id="plugin-management">plugin management</h3>
+
+<h4 id="vim-8-has-its-own-plugin-management-function-so-you-do-not-need-vundle-any-more">vim 8 has its own plugin management function, so you do not need vundle any more.</h4>
+<ul>
+  <li>plugin path : ~/.vim/pack/foobar/{opt,start}
+    <ol>
+      <li>path [foobar] can be any name;</li>
+      <li>opt:  the plugin in opt path will load when manually(ex. run command : packadd xxxx);</li>
+      <li>start: the plugin in start path will load automaticly.
+ example:
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl <span class="nt">-L</span> https://github.com/kien/ctrlp.vim/archive/1.79.tar.gz <span class="se">\</span>
+ | <span class="nb">tar </span>zx <span class="nt">-C</span> ~/.vim/pack/foobar/opt
+</code></pre></div>        </div>
+        <p>add tags in vim commandline</p>
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :helptags ~/.vim/pack/foobar/opt/ctrlp.vim-1.79/doc
+</code></pre></div>        </div>
+        <p>when you want to use this ctrlp, run command in vim:</p>
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :packadd ctrlp.vim-1.79
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ul>
+
