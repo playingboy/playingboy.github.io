@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-20T11:34:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">keep learning and keep young</title><subtitle>This is a web site for learning computer science!</subtitle><entry><title type="html">Vim8 Usage</title><link href="http://localhost:4000/2019/10/17/vim8-usage.html" rel="alternate" type="text/html" title="Vim8 Usage" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/17/vim8-usage</id><content type="html" xml:base="http://localhost:4000/2019/10/17/vim8-usage.html">&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-20T21:32:18+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">keep learning and keep young</title><subtitle>This is a web site for learning computer science!</subtitle><entry><title type="html">Vim8 Usage</title><link href="http://localhost:4000/2019/10/17/vim8-usage.html" rel="alternate" type="text/html" title="Vim8 Usage" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/17/vim8-usage</id><content type="html" xml:base="http://localhost:4000/2019/10/17/vim8-usage.html">&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
 
 &lt;h4 id=&quot;vim-8-has-its-own-plugin-management-function-so-you-do-not-need-vundle-any-more&quot;&gt;vim 8 has its own plugin management function, so you do not need vundle any more.&lt;/h4&gt;
 &lt;ul&gt;
@@ -9,8 +9,8 @@
       &lt;li&gt;start: the plugin in start path will load automaticly.&lt;br /&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;example:
-download files:
+  &lt;li&gt;example:&lt;br /&gt;
+  download files:
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; https://github.com/kien/ctrlp.vim/archive/1.79.tar.gz &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
  | &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;zx &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; ~/.vim/pack/foobar/opt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
@@ -19,6 +19,51 @@ download files:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;when you want to use this ctrlp, run command in vim:&lt;/p&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; :packadd ctrlp.vim-1.79
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;### backup and undo
+ #### users can set up the backup and undo feature to avoid data loss in this four situations:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Crash during editing beteween saves;&lt;/li&gt;
+  &lt;li&gt;The two open VIM instances edit the same file and overwrite each other’s changes;&lt;/li&gt;
+  &lt;li&gt;Crash during saving, that is, crash when the target file has been emptied and the new content has not been completely written;&lt;/li&gt;
+  &lt;li&gt;New content has been saved, but I want to find the old content again.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;#### settings&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;edit ~/.vimrc, add this settings to the file.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot; Protect changes between writes. Default values of
+&quot;&lt;/span&gt; updatecount &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;200 keystrokes&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and updatetime
+&lt;span class=&quot;s2&quot;&gt;&quot; (4 seconds) are fine
+set swapfile
+set directory^=~/.vim/swap//
+&quot;&lt;/span&gt; protect against crash-during-write
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;writebackup
+&lt;span class=&quot;s2&quot;&gt;&quot; but do not persist backup after successful write
+set nobackup
+&quot;&lt;/span&gt; use rename-and-write-new method whenever safe
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;backupcopy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;auto
+&lt;span class=&quot;s2&quot;&gt;&quot; patch required to honor double slash at end
+if has(&quot;&lt;/span&gt;patch-8.1.0251&lt;span class=&quot;s2&quot;&gt;&quot;)
+ &quot;&lt;/span&gt; consolidate the writebackups &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; not a big
+ &lt;span class=&quot;s2&quot;&gt;&quot; deal either way, since they usually get deleted
+ set backupdir^=~/.vim/backup//
+end
+&quot;&lt;/span&gt; persist the undo tree &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;each file
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;undofile
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;undodir^&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/undo//
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;you must make the directory for backup files and undo files:
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; ~/.vim/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;swap,undodir,backup&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;use the backup and undo function in the vim commandline&lt;/p&gt;
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; :undolist &lt;span class=&quot;c&quot;&gt;# number and importance of changes&lt;/span&gt;
+ :earlier &lt;span class=&quot;c&quot;&gt;# jump to the earlier version&lt;/span&gt;
+ :later  &lt;span class=&quot;c&quot;&gt;# jump to the later version&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html">plugin management</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-09-30T21:26:26+08:00</published><updated>2019-09-30T21:26:26+08:00</updated><id>http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
