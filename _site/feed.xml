@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-20T21:32:18+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">keep learning and keep young</title><subtitle>This is a web site for learning computer science!</subtitle><entry><title type="html">Vim8 Usage</title><link href="http://localhost:4000/2019/10/17/vim8-usage.html" rel="alternate" type="text/html" title="Vim8 Usage" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/17/vim8-usage</id><content type="html" xml:base="http://localhost:4000/2019/10/17/vim8-usage.html">&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-20T21:42:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">keep learning and keep young</title><subtitle>This is a web site for learning computer science!</subtitle><entry><title type="html">Vim8 Usage</title><link href="http://localhost:4000/2019/10/17/vim8-usage.html" rel="alternate" type="text/html" title="Vim8 Usage" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/17/vim8-usage</id><content type="html" xml:base="http://localhost:4000/2019/10/17/vim8-usage.html">&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
 
 &lt;h4 id=&quot;vim-8-has-its-own-plugin-management-function-so-you-do-not-need-vundle-any-more&quot;&gt;vim 8 has its own plugin management function, so you do not need vundle any more.&lt;/h4&gt;
 &lt;ul&gt;
@@ -23,8 +23,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;### backup and undo
- #### users can set up the backup and undo feature to avoid data loss in this four situations:&lt;/p&gt;
+&lt;h3 id=&quot;backup-and-undo&quot;&gt;backup and undo&lt;/h3&gt;
+&lt;h4 id=&quot;users-can-set-up-the-backup-and-undo-feature-to-avoid-data-loss-in-this-four-situations&quot;&gt;users can set up the backup and undo feature to avoid data loss in this four situations:&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;Crash during editing beteween saves;&lt;/li&gt;
   &lt;li&gt;The two open VIM instances edit the same file and overwrite each other’s changes;&lt;/li&gt;
@@ -32,7 +32,7 @@
   &lt;li&gt;New content has been saved, but I want to find the old content again.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;#### settings&lt;/p&gt;
+&lt;h4 id=&quot;settings&quot;&gt;settings&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;edit ~/.vimrc, add this settings to the file.
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot; Protect changes between writes. Default values of
@@ -60,7 +60,8 @@ end
   &lt;li&gt;you must make the directory for backup files and undo files:
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; ~/.vim/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;swap,undodir,backup&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;use the backup and undo function in the vim commandline&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use the backup and undo function in the vim commandline
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; :undolist &lt;span class=&quot;c&quot;&gt;# number and importance of changes&lt;/span&gt;
  :earlier &lt;span class=&quot;c&quot;&gt;# jump to the earlier version&lt;/span&gt;
  :later  &lt;span class=&quot;c&quot;&gt;# jump to the later version&lt;/span&gt;

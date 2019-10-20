@@ -13,7 +13,7 @@ layout: post
  ```shell
  curl -L https://github.com/kien/ctrlp.vim/archive/1.79.tar.gz \
  | tar zx -C ~/.vim/pack/foobar/opt
-   ```
+ ```
  add tags in vim commandline
  ```shell
  :helptags ~/.vim/pack/foobar/opt/ctrlp.vim-1.79/doc
@@ -24,14 +24,14 @@ layout: post
  ```
 
 
- ### backup and undo
- #### users can set up the backup and undo feature to avoid data loss in this four situations:
+### backup and undo
+#### users can set up the backup and undo feature to avoid data loss in this four situations:
  1. Crash during editing beteween saves;
  2. The two open VIM instances edit the same file and overwrite each other's changes;
  3. Crash during saving, that is, crash when the target file has been emptied and the new content has not been completely written;
  4. New content has been saved, but I want to find the old content again.
 
- #### settings
+#### settings
  * edit ~/.vimrc, add this settings to the file.
  ```shell
 " Protect changes between writes. Default values of
@@ -59,7 +59,7 @@ set undodir^=~/.vim/undo//
  ```shell
  mkdir ~/.vim/{swap,undodir,backup}
  ```
- use the backup and undo function in the vim commandline
+ * use the backup and undo function in the vim commandline
  ```shell
  :undolist # number and importance of changes
  :earlier # jump to the earlier version

@@ -1,0 +1,71 @@
+I"j<h3 id="plugin-management">plugin management</h3>
+
+<h4 id="vim-8-has-its-own-plugin-management-function-so-you-do-not-need-vundle-any-more">vim 8 has its own plugin management function, so you do not need vundle any more.</h4>
+<ul>
+  <li>plugin path: ~/.vim/pack/foobar/{opt,start}
+    <ol>
+      <li>path [foobar] can be any name;</li>
+      <li>opt:  the plugin in opt path will load when manually(ex. run command : packadd xxxx);</li>
+      <li>start: the plugin in start path will load automaticly.<br /></li>
+    </ol>
+  </li>
+  <li>example:<br />
+  download files:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl <span class="nt">-L</span> https://github.com/kien/ctrlp.vim/archive/1.79.tar.gz <span class="se">\</span>
+ | <span class="nb">tar </span>zx <span class="nt">-C</span> ~/.vim/pack/foobar/opt
+</code></pre></div>    </div>
+    <p>add tags in vim commandline</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :helptags ~/.vim/pack/foobar/opt/ctrlp.vim-1.79/doc
+</code></pre></div>    </div>
+    <p>when you want to use this ctrlp, run command in vim:</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :packadd ctrlp.vim-1.79
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="backup-and-undo">backup and undo</h3>
+<h4 id="users-can-set-up-the-backup-and-undo-feature-to-avoid-data-loss-in-this-four-situations">users can set up the backup and undo feature to avoid data loss in this four situations:</h4>
+<ol>
+  <li>Crash during editing beteween saves;</li>
+  <li>The two open VIM instances edit the same file and overwrite each other’s changes;</li>
+  <li>Crash during saving, that is, crash when the target file has been emptied and the new content has not been completely written;</li>
+  <li>New content has been saved, but I want to find the old content again.</li>
+</ol>
+
+<h4 id="settings">settings</h4>
+<ul>
+  <li>edit ~/.vimrc, add this settings to the file.
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">" Protect changes between writes. Default values of
+"</span> updatecount <span class="o">(</span>200 keystrokes<span class="o">)</span> and updatetime
+<span class="s2">" (4 seconds) are fine
+set swapfile
+set directory^=~/.vim/swap//
+"</span> protect against crash-during-write
+<span class="nb">set </span>writebackup
+<span class="s2">" but do not persist backup after successful write
+set nobackup
+"</span> use rename-and-write-new method whenever safe
+<span class="nb">set </span><span class="nv">backupcopy</span><span class="o">=</span>auto
+<span class="s2">" patch required to honor double slash at end
+if has("</span>patch-8.1.0251<span class="s2">")
+ "</span> consolidate the writebackups <span class="nt">--</span> not a big
+ <span class="s2">" deal either way, since they usually get deleted
+ set backupdir^=~/.vim/backup//
+end
+"</span> persist the undo tree <span class="k">for </span>each file
+<span class="nb">set </span>undofile
+<span class="nb">set </span>undodir^<span class="o">=</span>~/.vim/undo//
+</code></pre></div>    </div>
+  </li>
+  <li>you must make the directory for backup files and undo files:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir</span> ~/.vim/<span class="o">{</span>swap,undodir,backup<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>use the backup and undo function in the vim commandline
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :undolist <span class="c"># number and importance of changes</span>
+ :earlier <span class="c"># jump to the earlier version</span>
+ :later  <span class="c"># jump to the later version</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+:ET

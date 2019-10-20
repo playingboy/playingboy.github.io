@@ -70,8 +70,8 @@
   </li>
 </ul>
 
-<p>### backup and undo
- #### users can set up the backup and undo feature to avoid data loss in this four situations:</p>
+<h3 id="backup-and-undo">backup and undo</h3>
+<h4 id="users-can-set-up-the-backup-and-undo-feature-to-avoid-data-loss-in-this-four-situations">users can set up the backup and undo feature to avoid data loss in this four situations:</h4>
 <ol>
   <li>Crash during editing beteween saves;</li>
   <li>The two open VIM instances edit the same file and overwrite each other’s changes;</li>
@@ -79,7 +79,7 @@
   <li>New content has been saved, but I want to find the old content again.</li>
 </ol>
 
-<p>#### settings</p>
+<h4 id="settings">settings</h4>
 <ul>
   <li>edit ~/.vimrc, add this settings to the file.
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">" Protect changes between writes. Default values of
@@ -107,7 +107,8 @@ end
   <li>you must make the directory for backup files and undo files:
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir</span> ~/.vim/<span class="o">{</span>swap,undodir,backup<span class="o">}</span>
 </code></pre></div>    </div>
-    <p>use the backup and undo function in the vim commandline</p>
+  </li>
+  <li>use the backup and undo function in the vim commandline
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> :undolist <span class="c"># number and importance of changes</span>
  :earlier <span class="c"># jump to the earlier version</span>
  :later  <span class="c"># jump to the later version</span>
