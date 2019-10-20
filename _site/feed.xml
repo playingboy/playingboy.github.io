@@ -1,14 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>playingbou</title>
-		<description>This is a web site for learning computer science!</description>
-		<link>http://localhost:4000</link>
-		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-		
-			<item>
-			   <title>Vim8 Usage</title>
-			   <description>&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-20T11:34:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">keep learning and keep young</title><subtitle>This is a web site for learning computer science!</subtitle><entry><title type="html">Vim8 Usage</title><link href="http://localhost:4000/2019/10/17/vim8-usage.html" rel="alternate" type="text/html" title="Vim8 Usage" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/17/vim8-usage</id><content type="html" xml:base="http://localhost:4000/2019/10/17/vim8-usage.html">&lt;h3 id=&quot;plugin-management&quot;&gt;plugin management&lt;/h3&gt;
 
 &lt;h4 id=&quot;vim-8-has-its-own-plugin-management-function-so-you-do-not-need-vundle-any-more&quot;&gt;vim 8 has its own plugin management function, so you do not need vundle any more.&lt;/h4&gt;
 &lt;ul&gt;
@@ -31,17 +21,7 @@ download files:
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; :packadd ctrlp.vim-1.79
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-			   <pubDate>Thu, 17 Oct 2019 00:00:00 +0800</pubDate>
-			   <link>http://localhost:4000/2019/10/17/vim8-usage.html</link>
-			   <guid isPermaLink="true">http://localhost:4000/2019/10/17/vim8-usage.html</guid>
-			   </item>
-		
-			<item>
-			   <title>Welcome to Jekyll!</title>
-			   <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">plugin management</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-09-30T21:26:26+08:00</published><updated>2019-09-30T21:26:26+08:00</updated><id>http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
@@ -57,13 +37,4 @@ download files:
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-			   <pubDate>Mon, 30 Sep 2019 21:26:26 +0800</pubDate>
-			   <link>http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html</link>
-			   <guid isPermaLink="true">http://localhost:4000/jekyll/update/2019/09/30/welcome-to-jekyll.html</guid>
-			   </item>
-		
-	</channel>
-</rss>
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
